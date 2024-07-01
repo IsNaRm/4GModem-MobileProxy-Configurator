@@ -1,0 +1,25 @@
+{
+  "E3372h-153_copy": {
+    "order": ["disconnect", "set_3G", "set_4G", "connect"],
+    "disconnect": {
+      "type": "POST",
+      "address": "/reqproc/proc_post",
+      "data": "Test=false&notCallback=true&goformId=DISCONNECT_NETWORK"
+                  },
+    "set_3G": {
+      "type": "POST",
+      "address": "/reqproc/proc_post",
+      "data": "isTest=false&goformId=SET_BEARER_PREFERENCE&BearerPreference=Only_WCDMA"
+    },
+    "set_4G": {
+      "type": "POST",
+      "address": "/reqproc/proc_post",
+      "data": "sTest=false&goformId=SET_BEARER_PREFERENCE&BearerPreference=Only_LTE"
+    },
+    "connect": {
+      "type": "POST",
+      "address": "/reqproc/proc_post",
+      "data": "sTest=false&notCallback=true&goformId=CONNECT_NETWORK"
+    }
+  }
+}
