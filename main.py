@@ -7,6 +7,9 @@ import subprocess
 import os
 import utils
 import config
+from threading import Thread
+
+import web_module
 
 
 class Modem():
@@ -192,6 +195,7 @@ if __name__ == "__main__":
             logger.error(f'Неверно введен номер, введите еще раз')
             choose = -1
         if choose == 0:
+            Thread(target=web_module.start_server).start()
             start_proxy()
             break
         if choose != -1:
