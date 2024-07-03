@@ -1,0 +1,25 @@
+service
+
+monitor C:\3proxy\bin64\3proxy.txt
+
+maxconn 500
+
+nscache 65536
+
+timeouts 1 5 30 60 180 1800 15 60
+
+#log C:\3proxy\log\3proxy.log D
+
+#logformat "- +_L%t.%. %N.%p %E %U %C:%c %R:%r %O %I %h %T"
+
+#rotate 180
+
+auth strong
+
+users login:CL:pass
+
+allow login
+
+proxy -n -a -p8001 -i192.168.1.2 -e192.168.8.100
+
+flush

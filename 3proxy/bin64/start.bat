@@ -1,0 +1,1 @@
+3proxy.exe 3proxy.cfg
