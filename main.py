@@ -67,7 +67,7 @@ def generate_config():
         for mac_address in settings:
             adapter = settings[mac_address]
             if adapter['proxy_login'] and adapter['proxy_pass']:
-                users[mac_address] = {'proxy_login':adapter['proxy_login'], 'proxy_login':adapter['proxy_pass']}
+                users[mac_address] = {'proxy_login':adapter['proxy_login'], 'proxy_pass':adapter['proxy_pass']}
             if adapter['proxy_port'] is None:
                 logger.warning(f'Модем - {mac_address} - не задан порт для прокси, он не будет использован')
 
